@@ -168,39 +168,43 @@ var mulai = setInterval(function(){
         
      } else {
                  //k1 Logic
-        var k1 = false;
 
-        if (k1) {
-            const x = document.querySelector("#trade > div > div > app-toasts > app-option-toast > div.win");
-            if(x){
-                console.log(time+' PROFIT K1')
-                k1 = false;
-                } {
-                    console.log(time+' LOSE K1')
-                    k1 = false;
-                }
-        }
-        const x = document.querySelector("#trade > div > div > app-toasts > app-option-toast > div.win");
-        if(x){
-           console.log(time+' PROFIT ONESHOT')
+                 setTimeout(function(){ 
+                    var k1 = false;
 
-           } else if(!x && parseInt(menit) == (parseInt(currentTIme)+1)){
-               if (!k1Terpasang) {
-                if (opK1 == "B") {
-                    console.log('K1 Buy')
-                    document.getElementsByName("deal-up_bg")[0].click(); 
-                    k1Terpasang = true;
-                    k1 = true;
-                   } else {
-                    console.log('K1 Sell')
-                    document.getElementsByName("deal-down_bg")[0].click()
-                    k1Terpasang = true;
-                    k1 = true;
-                   }
-               }
-
-
-           }
+                    if (k1) {
+                        const x = document.querySelector("#trade > div > div > app-toasts > app-option-toast > div.win");
+                        if(x){
+                            console.log(time+' PROFIT K1')
+                            k1 = false;
+                            } {
+                                console.log(time+' LOSE K1')
+                                k1 = false;
+                            }
+                    }
+                    const x = document.querySelector("#trade > div > div > app-toasts > app-option-toast > div.win");
+                    if(x){
+                       console.log(time+' PROFIT ONESHOT')
+            
+                       } else if(!x && parseInt(menit) == (parseInt(currentTIme)+1)){
+                           if (!k1Terpasang) {
+                            if (opK1 == "B") {
+                                console.log('K1 Buy')
+                                document.getElementsByName("deal-up_bg")[0].click(); 
+                                k1Terpasang = true;
+                                k1 = true;
+                               } else {
+                                console.log('K1 Sell')
+                                document.getElementsByName("deal-down_bg")[0].click()
+                                k1Terpasang = true;
+                                k1 = true;
+                               }
+                           }
+            
+            
+                       }
+                }, 500);
+        
          terpasang = false;
      }
 
