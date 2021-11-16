@@ -1,6 +1,7 @@
 var terpasang = false;
 var k1Terpasang = false;
 var opK1="";
+var k1 = false;
 var currentTIme;
 var mulai = setInterval(function(){
     var myArray = {
@@ -170,7 +171,7 @@ var mulai = setInterval(function(){
                  //k1 Logic
 
                  setTimeout(function(){ 
-                    var k1 = false;
+  
 
                     if (k1) {
                         const x = document.querySelector("#trade > div > div > app-toasts > app-option-toast > div.win");
