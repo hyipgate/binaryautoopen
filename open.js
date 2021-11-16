@@ -174,7 +174,7 @@ var mulai = setInterval(function(){
 
                  setTimeout(function(){ 
   
-
+                    setTimeout(function(){ 
                     if (k1 && parseInt(menit) == (parseInt(currentTIme)+1)) {
                         const x = document.querySelector("#trade > div > div > app-toasts > app-option-toast > div.win");
                         if(x){
@@ -185,6 +185,7 @@ var mulai = setInterval(function(){
                                 k1 = false;
                             }
                     }
+                },500)
                     const x = document.querySelector("#trade > div > div > app-toasts > app-option-toast > div.win");
                     if(x){
                        console.log(time+' PROFIT ONESHOT');
