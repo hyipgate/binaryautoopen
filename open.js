@@ -2,6 +2,7 @@ var terpasang = false;
 var k1Terpasang = false;
 var opK1="";
 var k1 = false;
+var k1Profit = false;
 var oneShoot = false;
 var currentTIme;
 var mulai = setInterval(function(){
@@ -166,7 +167,11 @@ var mulai = setInterval(function(){
                 terpasang = true;
              }
         }
+        const profit = document.querySelector("#qa_trading_expectedIncome.text-accent");
 
+        if (profit && detik === "59") {
+            oneShoot = true;
+        }
 
         
      } else {
@@ -180,17 +185,21 @@ var mulai = setInterval(function(){
                         if(x){
                             console.log(time+' PROFIT K1')
                             k1 = false;
-                            } {
+                            k1Profit = true;
+                            } else if (!x && !k1Profit) {
+                            
                                 console.log(time+' LOSE K1')
                                 k1 = false;
                             }
                     }
                 },500)
                     const x = document.querySelector("#trade > div > div > app-toasts > app-option-toast > div.win");
-                    if(x){
-                       console.log(time+' PROFIT ONESHOT');
+                
+                    if(x && !k1 && !k1Profit){
+                       console.log(time+' PROFIT OneSHOOT');
                        oneShoot = true;
                        } else if(!x && parseInt(menit) == (parseInt(currentTIme)+1) && !oneShoot){
+                        k1Profit = false;
                            if (!k1Terpasang) {
                             if (opK1 == "B") {
                                 console.log('K1 Buy')
