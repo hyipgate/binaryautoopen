@@ -2,6 +2,7 @@ var terpasang = false;
 var k1Terpasang = false;
 var opK1="";
 var k1 = false;
+var oneShoot = false;
 var currentTIme;
 var mulai = setInterval(function(){
     var myArray = {
@@ -150,6 +151,7 @@ var mulai = setInterval(function(){
      if (myArray[time] != undefined) {
         k1Terpasang = false;
         if (!terpasang) {
+            oneShoot = false;
             if (myArray[time] =='B') {
                 opK1 = 'B';
                 currentTIme = menit;
@@ -185,9 +187,9 @@ var mulai = setInterval(function(){
                     }
                     const x = document.querySelector("#trade > div > div > app-toasts > app-option-toast > div.win");
                     if(x){
-                       console.log(time+' PROFIT ONESHOT')
-            
-                       } else if(!x && parseInt(menit) == (parseInt(currentTIme)+1)){
+                       console.log(time+' PROFIT ONESHOT');
+                       oneShoot = true;
+                       } else if(!x && parseInt(menit) == (parseInt(currentTIme)+1) && !oneShoot){
                            if (!k1Terpasang) {
                             if (opK1 == "B") {
                                 console.log('K1 Buy')
