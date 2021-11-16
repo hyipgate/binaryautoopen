@@ -175,7 +175,7 @@ var mulai = setInterval(function(){
                  setTimeout(function(){ 
   
 
-                    if (k1) {
+                    if (k1 && parseInt(menit) == (parseInt(currentTIme)+1)) {
                         const x = document.querySelector("#trade > div > div > app-toasts > app-option-toast > div.win");
                         if(x){
                             console.log(time+' PROFIT K1')
@@ -196,11 +196,14 @@ var mulai = setInterval(function(){
                                 document.getElementsByName("deal-up_bg")[0].click(); 
                                 k1Terpasang = true;
                                 k1 = true;
+                                currentTIme= menit;
                                } else {
                                 console.log('K1 Sell')
                                 document.getElementsByName("deal-down_bg")[0].click()
                                 k1Terpasang = true;
                                 k1 = true;
+                                currentTIme= menit;
+
                                }
                            }
             
